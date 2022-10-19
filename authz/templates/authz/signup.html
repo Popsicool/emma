@@ -1,0 +1,41 @@
+<h1>Sign up</h1>
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
+<form action="{% url 'authz:signup' %}" method="POST">
+    {% csrf_token %}
+<!-- <label for="username">Username: </label><br>
+<input type="text" required name="username"><br> -->
+<label for="email">Email address:</label><br>
+<input type="email" name="email"  required> <br>
+<label for="first_name">First name:</label><br>
+<input type="text" required name="first_name"><br>
+<label for="last_name">Last_name:</label><br>
+<input type="text" name="last_name" required><br>
+<label for="phone_num">Phone Number:</label><br>
+<input type="tel" name="phone_num"><br>
+<label for="last_name">Date of Birth:</label><br>
+<input type="date" name="date_of_birth" required><br>
+<label for="sex">Sex:</label><br>
+<select name="sex" id=""> --Select one--
+
+    <option value="M">Male</option>
+    <option value="F">Female</option>
+</select><br>
+<label for="country">Country:</label><br>
+<input type="text" name="country" required><br>
+<label for="state_of_origin">State of Origin:</label><br>
+<input type="text" name="state_of_origin"><br>
+<label for="address">Address:</label><br>
+<textarea name="address" id="" cols="30" rows="10"></textarea><br>
+<label for="password1">Password:</label><br>
+<input type="password" name="password" required><br>
+<label for="confirm_password">Confirm Password</label><br>
+<input type="password" name="confirm_password"><br>
+
+<button type="submit">Submit</button>
+</form>
+
+
+<p>Don't have an account yet? <a href="{% url 'authz:login' %}">Log in</a> here</p>
+<p><a href="{% url 'transactions:index' %}">Home</a></p>
