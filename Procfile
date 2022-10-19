@@ -1,0 +1,1 @@
+web gunicorn Ebank.wsgi:application --log-file -
